@@ -2,9 +2,22 @@ const tempo = document.getElementById('tempo')
 const diminuirBtn = document.getElementById('diminuir')
 const aumentarBtn = document.getElementById('aumentar')
 const valorAtualInput = document.getElementById('valor-atual')
+const botaoZerar = document.getElementById('botao-zerar')
+const botaoAdd = document.getElementById('botao-add')
 
-let tempoRestante = 60
-let valorAtual = 75
+
+let tempoRestante = 0
+let valorAtual = 0
+
+
+botaoZerar.onclick =() => {
+    tempoRestante = 0
+}
+
+botaoAdd.onclick = () => {
+    let valor = valorAtualInput.value
+    tempoRestante += valor
+ }
 
 diminuirBtn.addEventListener('click' , () => {
     if(valorAtual - 10 <= 0){
@@ -24,6 +37,13 @@ valorAtual += 10
 })
 
 setInterval(() =>{
+    if(tempoRestante <= 0){
+        tempoRestante = 0
+    } else {
+      tempo.innertext = `${tempoRestante} segs`
+      tempoRestante = tempoRestante - 1
+
+    }
     
     tempo.innerText = `${tempoRestante} segs`
     tempoRestante = tempoRestante - 1

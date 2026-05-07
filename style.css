@@ -31,3 +31,15 @@ body {
 .fa-alarm-clock {
     font-size: 28px;
 }
+
+.input-estilo {
+    height: 90px;
+    width: 220px;
+    font-size: 20px;
+}
+
+.btn-formato {
+    height: 90px;
+    width: 90px;
+    font-size: 65px;
+}
